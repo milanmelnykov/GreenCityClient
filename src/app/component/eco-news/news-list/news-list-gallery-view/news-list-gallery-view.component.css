@@ -5,8 +5,9 @@ div {
 }
 
 #list-gallery-content {
+  display: block;
   padding: 16px;
-  width: 359px;
+  /*width: 359px;*/
 }
 
 #list-gallery-content:hover {

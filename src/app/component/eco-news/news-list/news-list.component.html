@@ -15,7 +15,8 @@
 </div>
 <div>
   <ul class="list"
-      [ngClass]="{ 'gallery-view-active': view }">
+      [ngClass]="{ 'gallery-view-active': view }"
+      #masonryGrid>
     <li [ngClass]="{
                     'gallery-view-li-active': view,
                     'list-view-li-active': !view
