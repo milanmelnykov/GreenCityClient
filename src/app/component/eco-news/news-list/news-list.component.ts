@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import {Component, OnInit, Input, OnDestroy, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy} from '@angular/core';
 import { EcoNewsService } from 'src/app/service/eco-news/eco-news.service';
 import { Subscription } from 'rxjs';
 import { EcoNewsModel } from '../../../model/eco-news/eco-news-model';
@@ -8,9 +8,11 @@ declare let Masonry: any;
 @Component({
   selector: 'app-news-list',
   templateUrl: './news-list.component.html',
-  styleUrls: ['./news-list.component.css']
+  styleUrls: ['./news-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
-export class NewsListComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NewsListComponent implements OnInit, AfterViewChecked, OnDestroy {
   @ViewChild('masonryGrid', {static: true}) masonryGrid: ElementRef;
 
   private view: boolean;
@@ -71,9 +73,9 @@ export class NewsListComponent implements OnInit, AfterViewInit, OnDestroy {
       tags:["news","ads"]}
   ];
 
-  constructor(private ecoNewsService: EcoNewsService) { }
+  constructor(private ecoNewsService: EcoNewsService) {}
 
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     this.masonryLayout();
   }
 
@@ -83,7 +85,8 @@ export class NewsListComponent implements OnInit, AfterViewInit, OnDestroy {
     this.fetchAllEcoNews();
   }
 
-  private fetchAllEcoNews():void {
+
+  private fetchAllEcoNews(): void {
     this.ecoNewsSubscription = this.ecoNewsService
       .newsListSubject
       .subscribe(this.setAllAndStartingElems.bind(this));
@@ -123,11 +126,11 @@ export class NewsListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private masonryLayout() {
-    new Masonry(this.masonryGrid.nativeElement, {
-      itemSelector: '.gallery-view-li-active',
-      columnWidth: 32,
-      horizontalOrder: true
-    });
+      new Masonry(this.masonryGrid.nativeElement, {
+        itemSelector: '.gallery-view-li-active',
+        columnWidth: 30,
+        horizontalOrder: true
+      });
   }
 
   ngOnDestroy() {

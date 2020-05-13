@@ -20,7 +20,7 @@
 }
 
 .gallery-view-active {
-  width: 1200px;
+  max-width: 1141px;
   /*column-gap: 32px;*/
   /*column-count: 3;*/
 }
