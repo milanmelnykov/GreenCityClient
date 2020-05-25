@@ -14,7 +14,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 @NgModule({
     declarations: [
         ProposeCafeComponent,
-        ModalComponent,
+        ModalComponent
     ],
     imports: [
         AppRoutingModule,

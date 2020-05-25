@@ -22,7 +22,9 @@ import { SearchNotFoundComponent } from './search-popup/search-not-found/search-
   exports: [
     HeaderComponent,
     FooterComponent,
-    SearchPopupComponent
+    SearchPopupComponent,
+    SearchItemComponent,
+    SearchNotFoundComponent
   ],
   providers: [
 

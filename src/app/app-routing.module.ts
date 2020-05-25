@@ -16,6 +16,10 @@ export const routes: Routes = [
     loadChildren: () => import('./component/about/about.module').then(mod => mod.AboutModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./component/search-all-results/search.module').then(mod => mod.SearchModule)
+  },
+  {
     path: 'map',
     loadChildren: () => import('./component/map/map.module').then(mod => mod.MapModule)
   },
