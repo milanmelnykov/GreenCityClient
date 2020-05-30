@@ -25,11 +25,23 @@ steps:
   displayName: 'npm install'
 
 
+# - script: |
+#     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#     sudo apt install ./google-chrome-stable_current_amd64.deb -y
+#   displayName: 'install chrome'
+
 - script: |
+    sudo apt-get install -y libappindicator1 fonts-liberation
+    mkdir temp & cd temp
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt install ./google-chrome-stable_current_amd64.deb -y
+    sudo dpkg -i google-chrome*.deb
+  displayName: 'install chrome'
 
    
 - script: |
     ng e2e 
+  displayName: 'ng e2e'
+
+- script: |
+    ng test --watch=false --browsers=ChromeHeadless
   displayName: 'ng test'
