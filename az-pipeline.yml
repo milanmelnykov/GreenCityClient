@@ -21,13 +21,15 @@ steps:
 
 - script: |
     npm install -g @angular/cli
-    npm install -g chrome
     npm install
   displayName: 'npm install'
 
-# - script: |
-#     ng test
-#   displayName: 'ng test'
+
+- script: |
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo apt install ./google-chrome-stable_current_amd64.deb -y
+
+   
 
 - script: |
     ng e2e
