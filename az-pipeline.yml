@@ -16,18 +16,28 @@ steps:
     npm install
   displayName: 'Gazer dependencies'
 
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'greencity-front-test'
+    organization: 'greencity-front'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'greencity-front'
+    cliProjectName: 'greencity-front'
+    cliSources: '.'
+
 
 # - script: |
 #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #     sudo apt install ./google-chrome-stable_current_amd64.deb -y
 #   displayName: 'Install chrome'
 
-- script: |
-    sudo apt-get install -y libappindicator1 fonts-liberation
-    mkdir temp & cd temp
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i google-chrome*.deb
-  displayName: 'Install chrome'
+# - script: |
+#     sudo apt-get install -y libappindicator1 fonts-liberation
+#     mkdir temp & cd temp
+#     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#     sudo dpkg -i google-chrome*.deb
+#   displayName: 'Install chrome'
 
 
 
