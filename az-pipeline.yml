@@ -18,12 +18,12 @@ steps:
 
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'greencity-front-test'
-    organization: 'greencity-front'
+    SonarCloud: 'greencity-client-test'
+    organization: 'chess-nodejs'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'greencity-front'
-    cliProjectName: 'greencity-front'
+    cliProjectKey: 'milanmelnykov_GreenCityClient'
+    cliProjectName: 'GreenCityClient'
     cliSources: '.'
 
 - task: SonarCloudAnalyze@1
