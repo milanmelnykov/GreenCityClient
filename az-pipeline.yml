@@ -31,5 +31,5 @@ steps:
 
    
 - script: |
-    ng test --watch=false --browsers=ChromeHeadless --code-coverage
+    ng e2e --watch=false --browsers=ChromeHeadless --code-coverage
   displayName: 'ng test'
