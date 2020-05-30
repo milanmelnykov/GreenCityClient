@@ -37,11 +37,17 @@ steps:
     sudo dpkg -i google-chrome*.deb
   displayName: 'install chrome'
 
-   
-- script: |
-    ng e2e 
-  displayName: 'ng e2e'
+
 
 - script: |
-    ng test --watch=false --browsers=ChromeHeadless
-  displayName: 'ng test'
+    google-chrome --version
+  displayName: 'chrome version'
+
+# - script: |
+#     ng e2e 
+#   displayName: 'ng e2e'
+
+# - script: |
+#     ng test --watch=false --browsers=ChromeHeadless
+#   displayName: 'ng test'
+
