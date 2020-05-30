@@ -24,7 +24,7 @@ steps:
     cliProjectKey: 'milanmelnykov_GreenCityClient'
     cliProjectName: 'GreenCityClient'
     cliSources: '.'
-    extraProperties: 'sonar.exclusions=node_modules/**''
+    extraProperties: 'sonar.exclusions=node_modules/**'
 
 - task: SonarCloudAnalyze@1
 
