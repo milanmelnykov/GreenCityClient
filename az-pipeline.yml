@@ -5,6 +5,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'greencity-client-test'
@@ -15,11 +21,6 @@ steps:
     cliProjectName: 'GreenCityClient'
     cliSources: '.'
 - task: SonarCloudAnalyze@1
-
-# - task: NodeTool@0
-#   inputs:
-#     versionSpec: '10.x'
-#   displayName: 'Install Node.js'
 
 # - script: |
 #     npm install -g @angular/cli
