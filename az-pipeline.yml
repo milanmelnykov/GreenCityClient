@@ -10,7 +10,6 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-
 - script: |
     npm install -g @angular/cli
     npm install
@@ -28,7 +27,6 @@ steps:
 
 - task: SonarCloudAnalyze@1
 
-
 # - script: |
 #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #     sudo apt install ./google-chrome-stable_current_amd64.deb -y
@@ -40,8 +38,6 @@ steps:
 #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #     sudo dpkg -i google-chrome*.deb
 #   displayName: 'Install chrome'
-
-
 
 # - script: |
 #     google-chrome --version
