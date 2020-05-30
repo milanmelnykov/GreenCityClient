@@ -22,26 +22,26 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-  displayName: 'npm install'
+  displayName: 'Gazer dependencies'
 
 
 # - script: |
 #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #     sudo apt install ./google-chrome-stable_current_amd64.deb -y
-#   displayName: 'install chrome'
+#   displayName: 'Install chrome'
 
 - script: |
     sudo apt-get install -y libappindicator1 fonts-liberation
     mkdir temp & cd temp
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i google-chrome*.deb
-  displayName: 'install chrome'
+  displayName: 'Install chrome'
 
 
 
-- script: |
-    google-chrome --version
-  displayName: 'chrome version'
+# - script: |
+#     google-chrome --version
+#   displayName: 'chrome version'
 
 # - script: |
 #     ng e2e 
@@ -51,3 +51,6 @@ steps:
 #     ng test --watch=false --browsers=ChromeHeadless
 #   displayName: 'ng test'
 
+- script: |
+    ng lint 
+  displayName: 'ng lint'
