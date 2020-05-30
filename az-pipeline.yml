@@ -25,6 +25,10 @@ steps:
     npm install
   displayName: 'npm install'
 
+# - script: |
+#     ng test
+#   displayName: 'ng test'
+
 - script: |
-    npm run test
-  displayName: 'npm install'
+    ng e2e
+  displayName: 'ng test'
