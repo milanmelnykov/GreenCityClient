@@ -43,12 +43,12 @@ steps:
   displayName: 'chrome version'
 
 # - script: |
-#     ng e2e --protractor-config=e2e/protractor-ci.conf.js
-#   displayName: 'ng e2e'
+#     ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
+#   displayName: 'Testing'
 
 - script: |
-    ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
-  displayName: 'ng test'
+    ng e2e --protractor-config=e2e/protractor-ci.conf.js
+  displayName: 'End to end test'
 
 # - script: |
 #     ng lint 
