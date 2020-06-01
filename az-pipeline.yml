@@ -16,41 +16,41 @@ steps:
     npm install -g @angular/cli
     npm install
   displayName: 'Gazer dependencies'
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'greencity-client-test'
-    organization: 'chess-nodejs'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'milanmelnykov_GreenCityClient'
-    cliProjectName: 'GreenCityClient'
-    cliSources: '.'
-    extraProperties: 'sonar.exclusions=node_modules/**'
-- task: SonarCloudAnalyze@1
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'greencity-client-test'
+#     organization: 'chess-nodejs'
+#     scannerMode: 'CLI'
+#     configMode: 'manual'
+#     cliProjectKey: 'milanmelnykov_GreenCityClient'
+#     cliProjectName: 'GreenCityClient'
+#     cliSources: '.'
+#     extraProperties: 'sonar.exclusions=node_modules/**'
+# - task: SonarCloudAnalyze@1
 
 # - script: |
 #     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #     sudo apt install ./google-chrome-stable_current_amd64.deb -y
 #   displayName: 'Install chrome'
 
-# - script: |
-#     sudo apt-get install -y libappindicator1 fonts-liberation
-#     mkdir temp & cd temp
-#     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#     sudo dpkg -i google-chrome*.deb
-#   displayName: 'Install chrome'
+- script: |
+    sudo apt-get install -y libappindicator1 fonts-liberation
+    mkdir temp & cd temp
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome*.deb
+  displayName: 'Install chrome'
 
-# - script: |
-#     google-chrome --version
-#   displayName: 'chrome version'
+- script: |
+    google-chrome --version
+  displayName: 'chrome version'
 
 # - script: |
 #     ng e2e 
 #   displayName: 'ng e2e'
 
-# - script: |
-#     ng test --watch=false --browsers=ChromeHeadless
-#   displayName: 'ng test'
+- script: |
+    ng test --watch=false --browsers=ChromeHeadless
+  displayName: 'ng test'
 
 # - script: |
 #     ng lint 
